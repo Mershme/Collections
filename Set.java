@@ -34,17 +34,26 @@ public class Set {
 			name2.add("I");
 			name2.add("N");
 			name2.add("G");
+			
 			System.out.println(name2);
 		
 			name2.remove("S");
 			System.out.println(name2);
 		
+			// Makes an iterator for the name2 LinkedHashSet
 			Iterator iterator = name2.iterator();
+			// Stays in this loop while there are still more values in the iterator.
 			while(iterator.hasNext()){
+				// Assigns the values in the iterator to a string and prints them out
 				String newName = (String) iterator.next();
 				System.out.println(newName);
+				// Removes the current element from the iterator and the new string if it contains "G".
+				if (newName.contains("G")) {
+			        iterator.remove();
+			    }
 			}
-			
+			// Printso out the new Treese.  You will notice that the G is gone because it was removed
+			// from the iterator above
 			TreeSet tree = new TreeSet(name2);
 			System.out.println(tree);
 	}
